@@ -49,7 +49,6 @@ cmp.setup({
           return item
       end,
     },
-  }
 })
 
 vim.cmd([[

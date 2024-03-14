@@ -10,7 +10,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 return require("packer").startup(function(use)
     -- Packer
     use("wbthomason/packer.nvim")
-
+   
+    -- Debugger
+    use('puremourning/vimspector')
     -- Common utilities
     use("nvim-lua/plenary.nvim")
 

@@ -32,3 +32,15 @@ o.showmatch = true -- When a bracket is inserted, briefly jump to the matching o
 o.inccommand = "split" -- When nonempty, shows the effects of :substitute, :smagic, :snomagic and user commands with the :command-preview flag as you type.
 o.splitbelow = "splitright" -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
+
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.wo.nofoldenable
+
+-- Vimspector options
+vim.cmd([[
+  let g:vimspector_sidebar_width = 85
+  let g:vimspector_bottombar_height = 15
+  let g:vimspector_terminal_maxwidth = 70
+]])
+
