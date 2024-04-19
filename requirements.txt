@@ -1,0 +1,12 @@
+astroid==3.1.0
+dill==0.3.8
+greenlet==3.0.3
+isort==5.13.2
+mccabe==0.7.0
+msgpack==1.0.8
+nodeenv==1.8.0
+platformdirs==4.2.0
+pylint==3.1.0
+pynvim==0.5.0
+pyright==1.1.359
+tomlkit==0.12.4

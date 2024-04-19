@@ -35,12 +35,12 @@ o.termguicolors = true
 
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.wo.nofoldenable
 
 -- Vimspector options
 vim.cmd([[
   let g:vimspector_sidebar_width = 85
   let g:vimspector_bottombar_height = 15
   let g:vimspector_terminal_maxwidth = 70
+  let g:python3_host_prog = '~/.config/nvim/venv/bin/python3'
 ]])
 
