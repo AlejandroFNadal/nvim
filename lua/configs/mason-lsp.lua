@@ -13,7 +13,6 @@ masonlsp.setup({
         "html",
         "jsonls",
         "tsserver",
-        "pyright",
         "tailwindcss",
     },
 })
