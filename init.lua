@@ -7,9 +7,9 @@ require("maps")
 -- colorscheme config: kanagawa
 -- local themeStatus, kanagawa = pcall(require, "kanagawa")
 
-vim.cmd("colorscheme morning")
--- if themeStatus then
--- else
--- return
---end
+if themeStatus then
+	vim.cmd("colorscheme kanagawa-wave")
+else
+	return
+end
 
