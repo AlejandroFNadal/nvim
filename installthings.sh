@@ -22,3 +22,5 @@ pip3 install pyright
 
 # stop weird vimdoc error
 :TSInstall vimdoc
+
+# Set NerdFontOnlyIcons in .local/share/fonts
