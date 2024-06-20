@@ -33,8 +33,11 @@ o.inccommand = "split" -- When nonempty, shows the effects of :substitute, :smag
 o.splitbelow = "splitright" -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
 
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+
+vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
+vim.g.copilot_no_tab_map = true
 
 -- Vimspector options
 vim.cmd([[
@@ -43,4 +46,3 @@ vim.cmd([[
   let g:vimspector_terminal_maxwidth = 70
   let g:python3_host_prog = '~/.config/nvim/venv/bin/python3'
 ]])
-
