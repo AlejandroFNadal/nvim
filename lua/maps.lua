@@ -73,4 +73,17 @@ map('n', "Db", ":call vimspector#ToggleBreakpoint()<cr>")
 map('n', "Dw", ":call vimspector#AddWatch()<cr>")
 map('n', "De", ":call vimspector#Evaluate()<cr>")
 
+-- LSP
+map("n", "K", "<CMD>lua vim.lsp.buf.hover()<CR>")
+map("n", "gd", "<CMD>lua vim.lsp.buf.definition()<CR>")
+map("n", "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>")
+map("n", "gr", "<CMD>lua vim.lsp.buf.references()<CR>")
+map("n", "gi", "<CMD>lua vim.lsp.buf.implementation()<CR>")
+map("n", "gt", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
+map("n", "gs", "<CMD>lua vim.lsp.buf.signature_help()<CR>")
+map("n", "ca", "<CMD>lua vim.lsp.buf.code_action()<CR>")
+map("n", "cr", "<CMD>lua vim.lsp.buf.rename()<CR>")
+map("n", "cf", "<CMD>lua vim.lsp.buf.formatting()<CR>")
+map("n", "<leader>rn", "<CMD>lua vim.lsp.buf.rename()<CR>")
+
 

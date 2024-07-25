@@ -1,6 +1,6 @@
 -- 📂lua/📂configs/🌑null-ls.lua
 
-local status, nls = pcall(require, "none-ls")
+local status, nls = pcall(require, "null-ls")
 
 if not status then
 	return

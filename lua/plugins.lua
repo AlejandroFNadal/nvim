@@ -89,16 +89,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- LSP diagnostics, code actions, and more via Lua.
-	use({
-		"nvimtools/none-ls.nvim",
-		config = function()
-			require("configs.null-ls")
-		end,
-		requires = { "nvim-lua/plenary.nvim" },
-	})
-
-	-- Mason: Portable package manager
+-- Mason: Portable package manager
 	use({
 		"williamboman/mason.nvim",
 		config = function()
@@ -112,6 +103,17 @@ return require("packer").startup(function(use)
 			require("configs.mason-lsp")
 		end,
 	})
+
+	-- LSP diagnostics, code actions, and more via Lua.
+	use({
+		"nvimtools/none-ls.nvim",
+		config = function()
+			require("configs.null-ls")
+		end,
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+
+	
 
 	-- File manager
 	use({
