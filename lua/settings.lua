@@ -33,11 +33,14 @@ o.inccommand = "split" -- When nonempty, shows the effects of :substitute, :smag
 o.splitbelow = "splitright" -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
 
-vim.wo.foldmethod = "expr"
+vim.wo.foldmethod = "indent"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
 vim.g.copilot_no_tab_map = true
+
+-- No folds in Telescope results
+vim.api.nvim_create_autocmd("FileType", { pattern = "TelescopeResults", command = [[setlocal nofoldenable]] })
 
 -- Vimspector options
 vim.cmd([[
