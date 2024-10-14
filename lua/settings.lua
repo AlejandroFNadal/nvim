@@ -49,3 +49,7 @@ vim.cmd([[
   let g:vimspector_terminal_maxwidth = 70
   let g:python3_host_prog = '~/.config/nvim/venv/bin/python3'
 ]])
+
+
+--
+--vim.lsp.set_log_level("debug")

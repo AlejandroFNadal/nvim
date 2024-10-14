@@ -52,3 +52,9 @@ nvim_lsp.tailwindcss.setup({
     capabilities = capabilities,
 })
 
+-- python
+nvim_lsp.pyright.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+

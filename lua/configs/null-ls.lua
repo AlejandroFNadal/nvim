@@ -27,6 +27,7 @@ nls.setup({
 		-- Diagnostics
 		dgn.eslint_d,
 		dgn.shellcheck,
+    dgn.flake8,
 		dgn.pylint.with({
 			method = nls.methods.DIAGNOSTICS_ON_SAVE,
 		}),
@@ -48,3 +49,4 @@ nls.setup({
 		end
 	end,
 })
+

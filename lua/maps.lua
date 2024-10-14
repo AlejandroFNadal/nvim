@@ -4,6 +4,11 @@ local function map(mode, lhs, rhs)
     vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
+local function nnoremap(lhs, rhs)
+  vim.api.nvim_set_keymap('n', lhs, rhs, { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('v', lhs, rhs, { noremap = true, silent = true })
+end
+
 local status, telescope = pcall(require, "telescope.builtin")
 if status then
     -- Telescope
@@ -84,6 +89,11 @@ map("n", "gs", "<CMD>lua vim.lsp.buf.signature_help()<CR>")
 map("n", "ca", "<CMD>lua vim.lsp.buf.code_action()<CR>")
 map("n", "cr", "<CMD>lua vim.lsp.buf.rename()<CR>")
 map("n", "cf", "<CMD>lua vim.lsp.buf.formatting()<CR>")
+map("n", "<leader>d", "<CMD>lua vim.diagnostic.open_float()<CR>")
 map("n", "<leader>rn", "<CMD>lua vim.lsp.buf.rename()<CR>")
 
-
+-- shift keys to the right for moving
+-- nnoremap("j", "h")
+-- nnoremap("k", "j")
+-- nnoremap("l", "k")
+-- nnoremap(";", "l")
