@@ -28,12 +28,13 @@ map("n", "<leader>w", "<CMD>update<CR>")
 -- Quit
 map("n", "<leader>q", "<CMD>q<CR>")
 
+
 -- Exit insert mode
 map("i", "jk", "<ESC>")
 
 -- Windows
-map("n", "<leader>ñ", "<CMD>vsplit<CR>")
-map("n", "<leader>p", "<CMD>split<CR>")
+map("n", "<leader>v", "<CMD>vsplit<CR>")
+map("n", "<leader>h", "<CMD>split<CR>")
 
 -- NeoTree
 map("n", "<leader>e", "<CMD>Neotree toggle<CR>")
@@ -42,6 +43,7 @@ map("n", "<leader>o", "<CMD>Neotree focus<CR>")
 -- Buffer
 map("n", "<TAB>", "<CMD>bnext<CR>")
 map("n", "<S-TAB>", "<CMD>bprevious<CR>")
+map("n", "<leader>bd", "<CMD>bp|bd#<CR>")
 
 -- Terminal
 map("n", "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>")

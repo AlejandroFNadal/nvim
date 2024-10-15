@@ -15,7 +15,9 @@ masonlsp.setup({
         "jsonls",
         "tsserver",
         "tailwindcss",
-        "pyright"
+        "pyright",
+        "rust_analyzer",
+        "codelldb"
     },
 })
 
