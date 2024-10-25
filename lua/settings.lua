@@ -30,7 +30,7 @@ o.wildmenu = true -- When 'wildmenu' is on, command-line completion operates in 
 o.showcmd = true -- Show (partial) command in the last line of the screen. Set this option off if your terminal is slow.
 o.showmatch = true -- When a bracket is inserted, briefly jump to the matching one.
 o.inccommand = "split" -- When nonempty, shows the effects of :substitute, :smagic, :snomagic and user commands with the :command-preview flag as you type.
-o.splitbelow = "splitright" -- When on, splitting a window will put the new window below the current one
+o.splitbelow = true -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
 
 vim.wo.foldmethod = "indent"
@@ -50,6 +50,8 @@ vim.cmd([[
   let g:python3_host_prog = '~/.config/nvim/venv/bin/python3'
 ]])
 
-
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 --
 --vim.lsp.set_log_level("debug")
