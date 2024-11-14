@@ -1,25 +1,25 @@
 -- 📂lua/🌑maps.lua
 
 local function map(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, { silent = true })
+	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
 local function nnoremap(lhs, rhs)
-  vim.api.nvim_set_keymap('n', lhs, rhs, { noremap = true, silent = true })
-  vim.api.nvim_set_keymap('v', lhs, rhs, { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", lhs, rhs, { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
 end
 
 local status, telescope = pcall(require, "telescope.builtin")
 if status then
-    -- Telescope
-    map("n", "<leader>ff", telescope.find_files)
-    map("n", "<leader>fg", telescope.live_grep)
-    map("n", "<leader>fb", telescope.buffers)
-    map("n", "<leader>fh", telescope.help_tags)
-    map("n", "<leader>fs", telescope.git_status)
-    map("n", "<leader>fc", telescope.git_commits)
+	-- Telescope
+	map("n", "<leader>ff", telescope.find_files)
+	map("n", "<leader>fg", telescope.live_grep)
+	map("n", "<leader>fb", telescope.buffers)
+	map("n", "<leader>fh", telescope.help_tags)
+	map("n", "<leader>fs", telescope.git_status)
+	map("n", "<leader>fc", telescope.git_commits)
 else
-    print("Telescope not found")
+	print("Telescope not found")
 end
 
 -- Save
@@ -27,7 +27,6 @@ map("n", "<leader>w", "<CMD>update<CR>")
 
 -- Quit
 map("n", "<leader>q", "<CMD>q<CR>")
-
 
 -- Exit insert mode
 map("i", "jk", "<ESC>")
@@ -76,9 +75,9 @@ vim.cmd([[
   nmap <F12> <cmd>call vimspector#StepOut()<cr>")
   nmap <F10> <cmd>call vimspector#StepInto()<cr>")
 ]])
-map('n', "Db", ":call vimspector#ToggleBreakpoint()<cr>")
-map('n', "Dw", ":call vimspector#AddWatch()<cr>")
-map('n', "De", ":call vimspector#Evaluate()<cr>")
+map("n", "Db", ":call vimspector#ToggleBreakpoint()<cr>")
+map("n", "Dw", ":call vimspector#AddWatch()<cr>")
+map("n", "De", ":call vimspector#Evaluate()<cr>")
 
 -- LSP
 map("n", "K", "<CMD>lua vim.lsp.buf.hover()<CR>")
@@ -91,6 +90,7 @@ map("n", "gs", "<CMD>lua vim.lsp.buf.signature_help()<CR>")
 map("n", "ca", "<CMD>lua vim.lsp.buf.code_action()<CR>")
 map("n", "cr", "<CMD>lua vim.lsp.buf.rename()<CR>")
 map("n", "cf", "<CMD>lua vim.lsp.buf.formatting()<CR>")
+map("n", "<leader>ne", "<CMD>lua vim.diagnostic.goto_next()<CR>")
 map("n", "<leader>d", "<CMD>lua vim.diagnostic.open_float()<CR>")
 map("n", "<leader>rn", "<CMD>lua vim.lsp.buf.rename()<CR>")
 
