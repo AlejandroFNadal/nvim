@@ -94,6 +94,9 @@ map("n", "<leader>ne", "<CMD>lua vim.diagnostic.goto_next()<CR>")
 map("n", "<leader>d", "<CMD>lua vim.diagnostic.open_float()<CR>")
 map("n", "<leader>rn", "<CMD>lua vim.lsp.buf.rename()<CR>")
 
+-- Colors
+map("n", "<leader>b", "<CMD>colorscheme kanagawa-wave<CR>")
+
 -- shift keys to the right for moving
 -- nnoremap("j", "h")
 -- nnoremap("k", "j")
