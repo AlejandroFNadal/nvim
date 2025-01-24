@@ -22,7 +22,7 @@ nls.setup({
 			filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescript" },
 		}),
 		fmt.stylua,
-		fmt.rustfmt,
+		--fmt.rustfmt,
 
 		-- Diagnostics
 		dgn.eslint_d,
