@@ -44,6 +44,17 @@ map("n", "<leader>o", "<CMD>Neotree focus<CR>")
 map("n", "<TAB>", "<CMD>bnext<CR>")
 map("n", "<S-TAB>", "<CMD>bprevious<CR>")
 map("n", "<leader>bd", "<CMD>bp|bd#<CR>")
+-- Jump to buffers
+map("n", "<leader>1", "<CMD>LualineBuffersJump 1<CR>")
+map("n", "<leader>2", "<CMD>LualineBuffersJump 2<CR>")
+map("n", "<leader>3", "<CMD>LualineBuffersJump 3<CR>")
+map("n", "<leader>4", "<CMD>LualineBuffersJump 4<CR>")
+map("n", "<leader>5", "<CMD>LualineBuffersJump 5<CR>")
+map("n", "<leader>6", "<CMD>LualineBuffersJump 6<CR>")
+map("n", "<leader>7", "<CMD>LualineBuffersJump 7<CR>")
+map("n", "<leader>8", "<CMD>LualineBuffersJump 8<CR>")
+map("n", "<leader>9", "<CMD>LualineBuffersJump 9<CR>")
+
 
 -- Terminal
 map("n", "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>")
