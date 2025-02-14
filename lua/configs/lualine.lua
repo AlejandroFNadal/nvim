@@ -10,22 +10,26 @@ lualine.setup({
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
-            statusline = {},
-            winbar = {},
+            statusline = {
+            {'neo-tree filesystem [1]'},
+            },
+            winbar = {
+              {'neo-tree filesystem [1]'},
+            },
         },
         ignore_focus = {},
         always_divide_middle = true,
         globalstatus = false,
         refresh = {
-            statusline = 1000,
-            tabline = 1000,
-            winbar = 1000,
+            statusline = 500,
+            tabline = 500,
+            winbar = 500,
         },
     },
     sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch", "diff", "diagnostics" },
-        lualine_c = { "filename" },
+        lualine_a = { "filename" },
+        lualine_b = { "mode"},
+        lualine_c = { "diff", "diagnostics" },
         lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_y = { "progress" },
         lualine_z = { "location" },
@@ -38,8 +42,16 @@ lualine.setup({
         lualine_y = {},
         lualine_z = {},
     },
-    tabline = {},
+    tabline = {
+      lualine_a = {{ "branch"}},
+      lualine_b = {
+        { "buffers", mode = 2, buffers_color={
+          active='StatusLine', inactive='StatusLineNC' 
+          }
+        }
+      },
+    },
     winbar = {},
     inactive_winbar = {},
-    extensions = {},
+    extensions = {'neo-tree'},
 })
