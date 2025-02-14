@@ -52,14 +52,6 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	-- LSP
-	use({
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("configs.lsp")
-		end,
-	})
-
 	use("onsails/lspkind-nvim")
 	use({
 		"L3MON4D3/LuaSnip",
@@ -89,7 +81,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
--- Mason: Portable package manager
+	-- Mason: Portable package manager
 	use({
 		"williamboman/mason.nvim",
 		config = function()
@@ -99,11 +91,18 @@ return require("packer").startup(function(use)
 
 	use({
 		"williamboman/mason-lspconfig.nvim",
+		requires = { "williamboman/mason.nvim" },
 		config = function()
 			require("configs.mason-lsp")
 		end,
 	})
-
+	-- LSP
+	use({
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("configs.lsp")
+		end,
+	})
 	-- LSP diagnostics, code actions, and more via Lua.
 	use({
 		"nvimtools/none-ls.nvim",
@@ -112,8 +111,6 @@ return require("packer").startup(function(use)
 		end,
 		requires = { "nvim-lua/plenary.nvim" },
 	})
-
-	
 
 	-- File manager
 	use({
@@ -131,8 +128,8 @@ return require("packer").startup(function(use)
 		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup({ "*" })
-  		end,
-	 })
+		end,
+	})
 
 	-- Terminal
 	use({

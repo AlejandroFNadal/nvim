@@ -8,6 +8,10 @@ vim.scriptencoding = "utf-8"
 global.mapleader = " "
 global.maplocalleader = " "
 
+-- Nerdfonts
+--
+global.have_nerd_fonts = true
+
 -- Editor options
 
 o.number = true -- Print the line number in front of each line
@@ -32,6 +36,7 @@ o.showmatch = true -- When a bracket is inserted, briefly jump to the matching o
 o.inccommand = "split" -- When nonempty, shows the effects of :substitute, :smagic, :snomagic and user commands with the :command-preview flag as you type.
 o.splitbelow = true -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
+o.showmode = false -- It is on the status line already
 
 vim.wo.foldmethod = "indent"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
@@ -56,3 +61,29 @@ vim.g.loaded_netrwPlugin = 1
 --
 --vim.lsp.set_log_level("debug")
 vim.g.rustfmt_autosave = 0
+--
+--Sync clipboard with system clipboard
+vim.schedule(function()
+	vim.o.clipboard = "unnamedplus"
+end)
+
+vim.o.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})

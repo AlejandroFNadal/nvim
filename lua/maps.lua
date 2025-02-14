@@ -14,6 +14,7 @@ if status then
 	-- Telescope
 	map("n", "<leader>ff", telescope.find_files)
 	map("n", "<leader>fg", telescope.live_grep)
+  map("n", "<leader>fi", function()telescope.live_grep{ no_ignore = true, hidden=true} end)
 	map("n", "<leader>fb", telescope.buffers)
 	map("n", "<leader>fh", telescope.help_tags)
 	map("n", "<leader>fs", telescope.git_status)
@@ -63,6 +64,8 @@ map("n", "<C-Left>", "<C-w><")
 map("n", "<C-Right>", "<C-w>>")
 map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
+vim.keymap.set("n", "<Leader>rz", "<C-w>_<C-w>|", { desc = "full si[z]e" })
+vim.keymap.set("n", "<Leader>rZ", "<C-w>=", { desc = "even si[Z]e" })
 
 -- Vimspector
 -- Vimspector
