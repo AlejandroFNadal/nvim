@@ -28,6 +28,7 @@ nls.setup({
 		dgn.eslint_d,
 		dgn.shellcheck,
     dgn.flake8,
+    dgn.clippy,
 		dgn.pylint.with({
 			method = nls.methods.DIAGNOSTICS_ON_SAVE,
 		}),
