@@ -16,19 +16,19 @@ nls.setup({
 	sources = {
 
 		-- Formatting
-		fmt.prettierd,
-		fmt.eslint_d,
-		fmt.prettier.with({
-			filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescript" },
-		}),
+		--fmt.prettierd,
+		--fmt.eslint_d,
+		--fmt.prettier.with({
+		--	filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescript", "typescriptreact" },
+		--}),
 		fmt.stylua,
 		--fmt.rustfmt,
 
 		-- Diagnostics
 		dgn.eslint_d,
 		dgn.shellcheck,
-    dgn.flake8,
-    dgn.clippy,
+		dgn.flake8,
+		dgn.clippy,
 		dgn.pylint.with({
 			method = nls.methods.DIAGNOSTICS_ON_SAVE,
 		}),
@@ -50,4 +50,3 @@ nls.setup({
 		end
 	end,
 })
-

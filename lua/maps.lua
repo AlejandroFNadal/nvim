@@ -14,7 +14,9 @@ if status then
 	-- Telescope
 	map("n", "<leader>ff", telescope.find_files)
 	map("n", "<leader>fg", telescope.live_grep)
-  map("n", "<leader>fi", function()telescope.live_grep{ no_ignore = true, hidden=true} end)
+	map("n", "<leader>fi", function()
+		telescope.live_grep({ no_ignore = true, hidden = true })
+	end)
 	map("n", "<leader>fb", telescope.buffers)
 	map("n", "<leader>fh", telescope.help_tags)
 	map("n", "<leader>fs", telescope.git_status)
@@ -54,7 +56,6 @@ map("n", "<leader>6", "<CMD>LualineBuffersJump 6<CR>")
 map("n", "<leader>7", "<CMD>LualineBuffersJump 7<CR>")
 map("n", "<leader>8", "<CMD>LualineBuffersJump 8<CR>")
 map("n", "<leader>9", "<CMD>LualineBuffersJump 9<CR>")
-
 
 -- Terminal
 map("n", "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>")
@@ -116,3 +117,8 @@ map("n", "<leader>b", "<CMD>colorscheme kanagawa-wave<CR>")
 -- nnoremap("k", "j")
 -- nnoremap("l", "k")
 -- nnoremap(";", "l")
+if vim.g.neovide then
+	map.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+	map.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+	map.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+end
