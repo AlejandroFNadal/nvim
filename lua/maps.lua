@@ -117,8 +117,5 @@ map("n", "<leader>b", "<CMD>colorscheme kanagawa-wave<CR>")
 -- nnoremap("k", "j")
 -- nnoremap("l", "k")
 -- nnoremap(";", "l")
-if vim.g.neovide then
-	map.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
-	map.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
-	map.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
-end
+map("n", "<leader>T", "<CMD>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+map("n", "<leader>t", "<CMD>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
